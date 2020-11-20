@@ -24,9 +24,15 @@ public class ListProductAction extends Action {
 			
 			
 			int currentPage = 1;
-			
+			System.out.println("1"+currentPage);
 			if(request.getParameter("currentPage") != null){
+				System.out.println("2"+currentPage);
+				if(request.getParameter("currentPage").equals("")) {
+					currentPage = 1;
+				}else {
 				currentPage=Integer.parseInt(request.getParameter("currentPage"));
+				System.out.println("3"+currentPage);
+				}
 			}	
 			searchVO.setCurrentPage(currentPage);
 			System.out.println(currentPage);
